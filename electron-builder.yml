@@ -1,0 +1,39 @@
+appId: com.glasshud.copilot
+productName: GlassHUD Copilot
+directories:
+  output: dist
+  buildResources: build
+asar: true
+files:
+  - out/**/*
+  - package.json
+mac:
+  category: public.app-category.developer-tools
+  hardenedRuntime: true
+  gatekeeperAssess: false
+  entitlements: build/entitlements.mac.plist
+  entitlementsInherit: build/entitlements.mac.plist
+  extendInfo:
+    NSMicrophoneUsageDescription: GlassHUD Copilot uses your microphone to transcribe speech locally via your chosen AI provider.
+    NSScreenCaptureUsageDescription: GlassHUD Copilot captures screenshots of your active display when you trigger Snap.
+    NSAudioCaptureUsageDescription: GlassHUD Copilot captures system audio via macOS Core Audio Process Taps for live transcription.
+  target:
+    - target: dmg
+      arch:
+        - arm64
+        - x64
+    - target: zip
+      arch:
+        - arm64
+        - x64
+  extraResources:
+    - from: resources/bin
+      to: bin
+      filter:
+        - mac-audio-capture
+win:
+  target:
+    - nsis
+linux:
+  target:
+    - AppImage

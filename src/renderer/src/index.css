@@ -1,0 +1,205 @@
+@import "tailwindcss";
+@import "katex/dist/katex.min.css";
+
+@layer base {
+  html,
+  body,
+  #root {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Inter", system-ui, sans-serif;
+    overflow: hidden;
+  }
+
+  body.view-overlay {
+    background: transparent !important;
+  }
+
+  body.view-dashboard {
+    background: #0b0d13;
+    color: #eef1f8;
+  }
+
+  body.view-picker {
+    background: transparent !important;
+  }
+}
+
+.app-drag {
+  -webkit-app-region: drag;
+}
+
+.app-no-drag {
+  -webkit-app-region: no-drag;
+}
+
+/* Custom sleek dark scrollbar */
+.glass-scroll::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+.glass-scroll::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.glass-scroll::-webkit-scrollbar-thumb {
+  background: rgba(148, 163, 184, 0.25);
+  border-radius: 9999px;
+}
+
+.glass-scroll::-webkit-scrollbar-thumb:hover {
+  background: rgba(148, 163, 184, 0.45);
+}
+
+/* Markdown prose polish for compact HUD */
+.hud-markdown {
+  font-size: 13px;
+  line-height: 1.55;
+  color: #e2e8f0;
+  word-break: break-word;
+}
+
+.hud-markdown > *:first-child {
+  margin-top: 0;
+}
+
+.hud-markdown > *:last-child {
+  margin-bottom: 0;
+}
+
+.hud-markdown p {
+  margin: 0.45em 0;
+}
+
+.hud-markdown h1,
+.hud-markdown h2,
+.hud-markdown h3 {
+  color: #f8fafc;
+  font-weight: 600;
+  margin: 0.75em 0 0.35em;
+  letter-spacing: -0.01em;
+}
+
+.hud-markdown h1 {
+  font-size: 15px;
+}
+
+.hud-markdown h2 {
+  font-size: 14px;
+}
+
+.hud-markdown h3 {
+  font-size: 13px;
+}
+
+.hud-markdown ul,
+.hud-markdown ol {
+  margin: 0.4em 0;
+  padding-left: 1.25rem;
+}
+
+.hud-markdown ul {
+  list-style-type: disc;
+}
+
+.hud-markdown ol {
+  list-style-type: decimal;
+}
+
+.hud-markdown li {
+  margin: 0.2em 0;
+}
+
+.hud-markdown code:not(pre code) {
+  background: rgba(99, 102, 241, 0.16);
+  color: #c7d2fe;
+  padding: 0.12em 0.36em;
+  border-radius: 5px;
+  font-family: ui-monospace, "SF Mono", Menlo, Monaco, Consolas, monospace;
+  font-size: 12px;
+}
+
+.hud-markdown table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 0.6em 0;
+  font-size: 12px;
+}
+
+.hud-markdown th,
+.hud-markdown td {
+  border: 1px solid rgba(148, 163, 184, 0.2);
+  padding: 0.35rem 0.5rem;
+  text-align: left;
+}
+
+.hud-markdown th {
+  background: rgba(148, 163, 184, 0.1);
+  color: #f1f5f9;
+}
+
+.hud-markdown blockquote {
+  border-left: 2px solid rgba(129, 140, 248, 0.6);
+  padding-left: 0.75rem;
+  color: #cbd5e1;
+  margin: 0.5em 0;
+}
+
+/* Syntax highlighting tokens (Dracula / Tokyo Night inspired) */
+.hljs-keyword,
+.hljs-selector-tag,
+.hljs-meta .hljs-keyword,
+.hljs-doctag {
+  color: #c084fc;
+}
+
+.hljs-title,
+.hljs-title.function_,
+.hljs-section {
+  color: #60a5fa;
+}
+
+.hljs-title.class_,
+.hljs-type,
+.hljs-built_in {
+  color: #38bdf8;
+}
+
+.hljs-string,
+.hljs-regexp,
+.hljs-addition {
+  color: #34d399;
+}
+
+.hljs-number,
+.hljs-literal,
+.hljs-symbol,
+.hljs-bullet {
+  color: #fbbf24;
+}
+
+.hljs-attr,
+.hljs-attribute,
+.hljs-variable,
+.hljs-template-variable,
+.hljs-property {
+  color: #f472b6;
+}
+
+.hljs-comment,
+.hljs-quote {
+  color: #64748b;
+  font-style: italic;
+}
+
+.hljs-deletion {
+  color: #fb7185;
+}
+
+.hljs-operator,
+.hljs-punctuation {
+  color: #94a3b8;
+}
